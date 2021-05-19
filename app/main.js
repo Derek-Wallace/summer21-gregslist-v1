@@ -1,4 +1,6 @@
+import { BoatsController } from "./Controllers/BoatsController.js";
 import { CarsController } from "./Controllers/CarsController.js"
+import { HousesController } from "./Controllers/HousesController.js";
 class App {
 
   // constructor(){
@@ -6,9 +8,11 @@ class App {
   // }
 
   carsController = new CarsController()
+  housesController = new HousesController()
+
+  boatsController = new BoatsController()
 
 }
 
-const app = new App();
 
-window["app"] = app
+window["app"] = new App()

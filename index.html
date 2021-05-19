@@ -28,7 +28,10 @@
                     <button class="btn btn-primary btn-block" onclick="app.carsController.drawCars()">Cars</button>
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-primary btn-block">Houses</button>
+                    <button class="btn btn-primary btn-block" onclick="app.housesController.drawHouses()">Houses</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary btn-block" onclick="app.boatsController.drawBoats()">Boats</button>
                 </div>
                 <!-- <div class="col-2"><button class="btn btn-info">Missed Connections Soooon</button></div>
                 <div class="col-2"><button class="btn btn-info"></button></div>
@@ -40,9 +43,6 @@
             </div>
 
             <div class="row mb-5">
-                <div class="col-12">
-                    <button class="fab" onclick="app.carsController.toggleForm()">+</button>
-                </div>
                 <div class="col-lg-8 m-auto">
                     <form class="card p-3 shadow d-none" id="car-form" onsubmit="app.carsController.addCar(event)">
                         <div class="form-group">
@@ -71,9 +71,65 @@
                         </div>
                         <button type="submit">submit form</button>
                     </form>
-                    <!-- <form onsubmit="app.housesController.addHouse(event)">
-                        TODO that you not me
-                    </form> -->
+                    <form class="card p-3 shadow d-none" id="house-form" onsubmit="app.housesController.addHouse(event)">
+                        <div class="form-group">
+                            <label for="address" class="sr-only">Address:</label>
+                            <input class="form-control" placeholder="Address" type="text" id="address" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="City" class="sr-only">City:</label>
+                            <input class="form-control" type="text" placeholder="City" id="city" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="State" class="sr-only">State:</label>
+                            <input class="form-control" placeholder="State" type="text" maxlength="2" id="state" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Price" class="sr-only">Price:</label>
+                            <input class="form-control" placeholder="Price" type="number" min="0" id="price" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Sqft" class="sr-only">Square feet:</label>
+                            <input class="form-control" placeholder="Sqft" type="number" min="0" id="sqft" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Stories" class="sr-only">Stories:</label>
+                            <input class="form-control" placeholder="Stories" type="number" min="1" id="stories" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Img" class="sr-only">Image:</label>
+                            <input class="form-control" placeholder="Img" type="text" id="img" />
+                        </div>
+                        <button type="submit">submit form</button>
+                    </form>
+                    <form class="card p-3 shadow d-none" id="boat-form" onsubmit="app.boatsController.addBoat(event)">
+                        <div class="form-group">
+                            <label for="Make" class="sr-only">Make:</label>
+                            <input class="form-control" placeholder="Make" type="text" id="make" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Model" class="sr-only">Model:</label>
+                            <input class="form-control" type="text" placeholder="Model" id="model" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Type" class="sr-only">Type:</label>
+                            <input class="form-control" placeholder="Type" type="text" id="type" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Price" class="sr-only">Price:</label>
+                            <input class="form-control" placeholder="Price" type="number" min="0" id="price" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Length" class="sr-only">Length:</label>
+                            <input class="form-control" placeholder="Length" type="number" min="0" id="length" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Img" class="sr-only">Image:</label>
+                            <input class="form-control" placeholder="Img" type="text" id="img" />
+                        </div>
+                        <button type="submit">submit form</button>
+                    </form>
+                    
                 </div>
             </div>
 

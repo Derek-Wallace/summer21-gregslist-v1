@@ -16,15 +16,14 @@ export class CarsController {
                         <img src="${car.img}" height="200" /> 
                     </div>
                     <div class="card-body">
-                        <p>
-                            <b>${car.make} ${car.model}</b>
-                        </p>
-                        <p>
-                            <em>${car.price}</em>
-                        </p>
+                        <h4>
+                            ${car.make} ${car.model}
+                        </h4>
+                            <h5>$${car.price}</h5>
                     </div>
                 </div>
             </div>
+            <button class="fab" onclick="app.carsController.toggleForm()">+</button>
             `
         })
         document.getElementById('listings').innerHTML = template
