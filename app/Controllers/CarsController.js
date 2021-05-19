@@ -27,6 +27,9 @@ export class CarsController {
             `
         })
         document.getElementById('listings').innerHTML = template
+        document.getElementById("car-form").classList.add("d-none")
+        document.getElementById("house-form").classList.add("d-none")
+        document.getElementById("boat-form").classList.add("d-none")
     }
 
     addCar(event){
@@ -49,6 +52,7 @@ export class CarsController {
 
     toggleForm(){
         document.getElementById('car-form').classList.toggle('d-none')
+        
     }
 
 }
