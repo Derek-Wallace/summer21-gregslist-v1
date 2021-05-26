@@ -1,11 +1,11 @@
 export class House {
-  constructor(address, city, state, price, sqft, stories, img){
-    this.address = address
-    this.city = city
-    this.state = state
+  constructor({price, year, bedrooms, bathrooms, levels, imgUrl, id}){
     this.price = price
-    this.sqft = sqft
-    this.stories = stories
-    this.img = img
+    this.year = year
+    this.bedrooms = bedrooms
+    this.bathrooms = bathrooms
+    this.levels = levels
+    this.imgUrl = imgUrl
+    this.id = id
   }
 }

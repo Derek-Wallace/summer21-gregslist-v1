@@ -28,7 +28,7 @@
                     <button class="btn btn-primary btn-block" onclick="app.carsController.drawCars()">Cars</button>
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-primary btn-block" onclick="app.housesController.drawHouses()">Houses</button>
+                    <button class="btn btn-primary btn-block" onclick="app.housesController.getHouses()">Houses</button>
                 </div>
                 <div class="col-2">
                     <button class="btn btn-primary btn-block" onclick="app.boatsController.drawBoats()">Boats</button>
@@ -45,6 +45,7 @@
             <div class="row mb-5">
                 <div class="col-lg-8 m-auto">
                     <form class="card p-3 shadow d-none" id="car-form" onsubmit="app.carsController.addCar(event)">
+                        <input type="text" class="d-none" name="carId" id="carId">
                         <div class="form-group">
                             <label for="make" class="sr-only">Make:</label>
                             <input class="form-control" placeholder="Make" type="text" id="make" required />
@@ -58,47 +59,40 @@
                             <input class="form-control" placeholder="price" type="number" min="0" id="price" required />
                         </div>
                         <div class="form-group">
-                            <label for="color" class="sr-only">Color:</label>
-                            <input class="form-control" placeholder="color" type="color" id="color" />
+                            <label for="year" class="sr-only">Year:</label>
+                            <input class="form-control" placeholder="year" type="number" min="0" id="year" required />
                         </div>
                         <div class="form-group">
-                            <label for="miles" class="sr-only">miles:</label>
-                            <input class="form-control" placeholder="miles" type="number" id="miles" />
-                        </div>
-                        <div class="form-group">
-                            <label for="img" class="sr-only">img:</label>
-                            <input class="form-control" placeholder="img" type="text" id="img" />
+                            <label for="imgUrl" class="sr-only">img:</label>
+                            <input class="form-control" placeholder="img" type="text" id="imgUrl" />
                         </div>
                         <button type="submit">submit form</button>
                     </form>
                     <form class="card p-3 shadow d-none" id="house-form" onsubmit="app.housesController.addHouse(event)">
+                        <input type="text" class="d-none" name="houseId" id="houseId">
                         <div class="form-group">
-                            <label for="address" class="sr-only">Address:</label>
-                            <input class="form-control" placeholder="Address" type="text" id="address" required />
+                            <label for="Bedrooms" class="sr-only">Bedrooms:</label>
+                            <input class="form-control" type="text" placeholder="Bedrooms" id="bedrooms" required />
                         </div>
                         <div class="form-group">
-                            <label for="City" class="sr-only">City:</label>
-                            <input class="form-control" type="text" placeholder="City" id="city" required />
+                            <label for="Bathrooms" class="sr-only">Bathrooms:</label>
+                            <input class="form-control" placeholder="Bathrooms" type="text" maxlength="2" id="bathrooms" required />
                         </div>
                         <div class="form-group">
-                            <label for="State" class="sr-only">State:</label>
-                            <input class="form-control" placeholder="State" type="text" maxlength="2" id="state" required />
+                            <label for="Year" class="sr-only">Year:</label>
+                            <input class="form-control" placeholder="Year" type="text" minlength="4" maxlength="4" id="year" required />
                         </div>
                         <div class="form-group">
                             <label for="Price" class="sr-only">Price:</label>
                             <input class="form-control" placeholder="Price" type="number" min="0" id="price" />
                         </div>
                         <div class="form-group">
-                            <label for="Sqft" class="sr-only">Square feet:</label>
-                            <input class="form-control" placeholder="Sqft" type="number" min="0" id="sqft" />
+                            <label for="levels" class="sr-only">levels:</label>
+                            <input class="form-control" placeholder="levels" type="number" min="1" id="levels" />
                         </div>
                         <div class="form-group">
-                            <label for="Stories" class="sr-only">Stories:</label>
-                            <input class="form-control" placeholder="Stories" type="number" min="1" id="stories" />
-                        </div>
-                        <div class="form-group">
-                            <label for="Img" class="sr-only">Image:</label>
-                            <input class="form-control" placeholder="Img" type="text" id="img" />
+                            <label for="imgUrl" class="sr-only">Image:</label>
+                            <input class="form-control" placeholder="imgUrl" type="text" id="imgUrl" />
                         </div>
                         <button type="submit">submit form</button>
                     </form>
@@ -144,6 +138,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app/main.js" type="module"></script>
 </body>
 

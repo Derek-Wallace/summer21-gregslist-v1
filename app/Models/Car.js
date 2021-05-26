@@ -1,10 +1,10 @@
 export class Car {
-    constructor(make, model, miles, color, price, img){
+    constructor({id, year, make, model, price, imgUrl}){
+        this.id = id
+        this.year = year
         this.make = make
         this.model = model
-        this.miles = miles
-        this.color = color
         this.price = price
-        this.img = img
+        this.imgUrl = imgUrl
     }
 }
