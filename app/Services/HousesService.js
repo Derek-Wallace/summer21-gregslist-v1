@@ -2,7 +2,7 @@ import { ProxyState } from "../AppState.js"
 import { House } from "../Models/House.js"
 
 
-let url = 'https://bcw-sandbox.herokuapp.com/api/houses/'
+let url = 'http://localhost:3000/api/houses/'
 class HousesService{
   async updateHouse(formData) {
     // @ts-ignore

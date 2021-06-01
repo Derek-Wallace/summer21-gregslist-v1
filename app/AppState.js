@@ -9,9 +9,8 @@ class AppState extends EventEmitter {
   /** @type {Car[]} */
   cars = []
   houses = []
-  // "https://cdn.houseplansservices.com/product/1hor8gqiu9vo20gap238r10nvp/w1024.jpg?v=17"
+  
   boats = [
-    new Boat("Malibu", "Wakesetter", "Wakeboard", 150000, "22", "https://i.pinimg.com/originals/04/4e/6a/044e6ac26d1a1c34a8efea902f874278.jpg")
   ]
 }
 

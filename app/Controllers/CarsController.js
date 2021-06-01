@@ -5,6 +5,7 @@ export class CarsController {
     constructor(){
         ProxyState.on('cars', this.drawCars)
         carsService.getCars()
+        this.drawCars()
     }
     drawCars(){
         let template = ''
@@ -13,7 +14,7 @@ export class CarsController {
             <div class="col-lg-4 listing my-3">
                 <div class="card">
                     <div> 
-                        <img class="w-100" src="${car.imgUrl}" height="200" /> 
+                        <img class="w-100" src="${car.img}" height="200" /> 
                     </div>
                     <div class="card-body">
                         <h4>
@@ -38,14 +39,13 @@ export class CarsController {
         event.preventDefault()
         try{
             event.preventDefault()
-            console.log(event)
             let form = event.target
             let formData = {
                 make: form.make.value,
                 model: form.model.value,
                 year: form.year.value,
                 price: form.price.value,
-                imgUrl: form.imgUrl.value,
+                img: form.img.value,
             }
             if(form.carId.value){
                 formData.id = form.carId.value
@@ -71,14 +71,14 @@ export class CarsController {
     }
 
     editCar(id){
+        this.toggleForm()
         let car = ProxyState.cars.find(c => c.id == id)
-        console.log("did it find the car?", car)
         let form = document.getElementById('car-form')
         form.make.value = car.make
         form.model.value = car.model
         form.year.value = car.year
         form.price.value = car.price
-        form.imgUrl.value = car.imgUrl
+        form.img.value = car.img
         form.carId.value = car.id
     }
     toggleForm(){

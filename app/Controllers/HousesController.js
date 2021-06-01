@@ -4,6 +4,7 @@ import { housesService } from "../Services/HousesService.js";
 export class HousesController{
     constructor(){
         ProxyState.on('houses', this.drawHouses)
+        this.drawHouses()
     }
 
     drawHouses(){
@@ -13,7 +14,7 @@ export class HousesController{
             <div class ="col-lg-4 listing my-3">
                 <div class ="card">
                     <div class="card-img">
-                        <img class="w-100" src="${house.imgUrl}" height=200px/>
+                        <img class="w-100" src="${house.img}" height=200px/>
                     </div>
                     <div class ="card-body">
                         <h5>$${house.price}</h5>
@@ -36,7 +37,6 @@ export class HousesController{
 
     addHouse(event){
         event.preventDefault()
-        debugger
         try{
         let form = event.target
         let formData = {
@@ -45,7 +45,7 @@ export class HousesController{
             bedrooms: form.bedrooms.value,
             bathrooms: form.bathrooms.value,
             levels: form.levels.value,
-            imgUrl: form.imgUrl.value
+            img: form.img.value
         }
         if(form.houseId.value){
             formData.id = form.houseId.value
@@ -61,15 +61,15 @@ export class HousesController{
     }
 
     editHouse(id){
+        this.toggleForm()
         let house = ProxyState.houses.find(h => h.id == id)
-        console.log("did it find the house?", house)
         let form = document.getElementById('house-form')
         form.bedrooms.value = house.bedrooms
         form.bathrooms.value = house.bathrooms
         form.year.value = house.year
         form.levels.value = house.levels
         form.price.value = house.price
-        form.imgUrl.value = house.imgUrl
+        form.img.value = house.img
         form.houseId.value = house.id
     }
 
